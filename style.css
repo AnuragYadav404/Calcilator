@@ -21,7 +21,7 @@ html, body {
 .container {
     width: 300px;
     height: 600px;
-
+    /* background-color: blueviolet; */
 }
 
 .keypad{
@@ -29,6 +29,8 @@ html, body {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     background-color: teal;
+    gap: 2px;
+    border-color: black;
 }
 
 
@@ -36,16 +38,49 @@ html, body {
     width: 300px;
     height: 50px;
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
+    /* align-items: center;
+    justify-content: center; */
     flex-wrap: 1;
-    background-color: teal;
+    background-color:rgb(108, 91, 91);
+    border-color: #D32F2F;
 
+}
+
+.screen-container{
+    display: flex;
+    /* width: 100px;
+    height: 25px; */
+    flex-grow: 1;
+    align-items: center;
+    background-color: black;
+    margin: 4px;
+    justify-content: flex-end;
 }
 
 .screen{
     display: flex;
     justify-content: flex-end;
     flex-wrap: 1;
-    flex-grow: 1;
+    align-items: center;
+    color: greenyellow;
+    /* flex-grow: 1; */
+    padding: 8px
+}
+
+.clear, .equals{
+    background-color: #D32F2F;
+    border-style: solid;
+    border-color: black;
+}
+
+.operation{
+    border-style: solid;
+    border-color: black ;
+    background-color: #03dac6;
+}
+
+.nums {
+    border-style: solid;
+    border-color: black;
+    background-color: #ffde03;
 }

@@ -35,6 +35,8 @@ function divide(a, b) {
     return a/b;
 }
 
+
+
 function operate(operator, a, b) {
     if(operator == '+') {
         return add(a, b);
@@ -48,7 +50,9 @@ function operate(operator, a, b) {
     return 'OOPS';
 }
 
-function eval() {
+
+
+function calculate() {
     let result = null;
     if(actionOp == "+"){
         result=add(oldVal, displayVal.innerText)
@@ -59,18 +63,28 @@ function eval() {
     }else if(actionOp == "/") {
         result= divide(oldVal, displayVal.innerText)
     }
+    return result;
+}
+
+
+
+function eval() {
+    let result = calculate();
     // oldVal = result;
-    displayVal.innerText = result;
-    oldVal = result;
+    displayVal.innerText = result;   
     actionOp = null;
 
 }
+
+
 
 function clearScreen() {
     displayVal.innerText = "";
     oldVal = null;
     actionOp = null;
 }
+
+
 
 function populate() {
     let buttonValue = this.innerText;
@@ -89,7 +103,9 @@ function action() {
     
 }
 
+
 evaluate.addEventListener('click', eval);
+
 clr.addEventListener('click', clearScreen);
 
 buttons.forEach((button)=> {
