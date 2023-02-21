@@ -60,7 +60,9 @@ function eval() {
         result= divide(oldVal, displayVal.innerText)
     }
     // oldVal = result;
-    displayVal.innerText = result
+    displayVal.innerText = result;
+    oldVal = result;
+    actionOp = null;
 
 }
 
@@ -80,9 +82,6 @@ function populate() {
 function action() {
     if(actionOp !== null) {
         eval();
-        oldVal = displayVal.innerText;
-        actionOp = this.innerText;
-        displayVal.innerText= "";
     }
     actionOp = this.innerText;
     oldVal = displayVal.innerText;
@@ -100,5 +99,3 @@ buttons.forEach((button)=> {
 operations.forEach((operator)=>{
     operator.addEventListener('click', action);
 })
-
-
