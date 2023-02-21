@@ -59,13 +59,15 @@ function eval() {
     }else if(actionOp == "/") {
         result= divide(oldVal, displayVal.innerText)
     }
-    oldVal = result;
+    // oldVal = result;
     displayVal.innerText = result
 
 }
 
 function clearScreen() {
     displayVal.innerText = "";
+    oldVal = null;
+    actionOp = null;
 }
 
 function populate() {
@@ -73,10 +75,19 @@ function populate() {
     displayVal.innerText = displayVal.innerText + buttonValue;
 }
 
+
+
 function action() {
-    actionOp = this.innerText
+    if(actionOp !== null) {
+        eval();
+        oldVal = displayVal.innerText;
+        actionOp = this.innerText;
+        displayVal.innerText= "";
+    }
+    actionOp = this.innerText;
     oldVal = displayVal.innerText;
     displayVal.innerText= "";
+    
 }
 
 evaluate.addEventListener('click', eval);
